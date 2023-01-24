@@ -1,26 +1,181 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.podcast-range {
+  position: relative;
+  display: flex;
+}
+.podcast-range .podcast-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.podcast-range .podcast-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
 }
 
-* {
-  box-sizing: border-box;
+.podcast-range .podcast-thumb {
+  position: absolute;
+  width: 90px;
+  height: 40px;
+  background: white;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  color: white;
+  border-radius: 79px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+}
+.podcast-range .podcast-progress {
+  width: 0;
+  height: 8px;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  pointer-events: none;
+      border-radius: 8px;
+
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* podcast */
+.player-banner {
+  background-image: url("../public/player-banner.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/* circle */
+.clock{
+  position: relative;
+  height: 400px;
+  width: 400px;
+  background-color: cadetblue;
+  border-radius: 50%;
+  margin:170px auto;
+}
+.rotator{
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background-color: lightcoral;
+  border-radius: 200px 0 0 200px;
+  transform-origin: 100% 50%;
+  transition:transform 1s linear;
+}
+.mask{
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  background-color: cadetblue;
+  border-radius: 200px 0 0 200px;
+}
+.mask2{
+  background-color: lightcoral;
+  border-radius: 0 200px 200px 0;
+  right: 0;
+}
+
+
+
+.chart {
+  /* background: conic-gradient(red var(--percentage), white 0); */
+  border-radius: 50%;
+  width: 80vmin;
+  height: 80vmin;
+  animation: timer 1s infinite linear;
+}
+
+@keyframes timer {
+  to {
+    --percentage: 100%;
   }
-  body {
-    color: white;
-    background: black;
-  }
+}
+
+
+
+
+.drop-zone{
+  background: rgba(0, 0, 0, 0.05);
+  width: 100px;
+  height:100px;
+  border-radius:13px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  border:2px dashed rgba(115, 115, 115, 0.5);
+}
+.drop-zone p{
+  text-align: center;
+}
+
+
+.drop-thumb{
+  display: flex;
+  flex-direction: row;
+}
+
+.thumbInner{
+  display: flex;
+  flex-direction: row;
+  row-gap: 10px;
+};
+
+
+
+#RFS-StepperContainer #RFS-StepContainer{
+  padding: 20px !important;
+  background-color: red;
+}
+
+
+/* stepper */
+.step .line-right,
+.step .line-left {
+  background: #e8e8e8;
+}
+
+.step-circle{
+  background-color: #737373;
+  opacity: 0.11;
+  width:50px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  justify-content: center;
+}
+.active-step{
+  background-color: #005ADC;
+  opacity: 1;
+  width: 64px;
+  height: 64px;
+}
+.completed-step{
+  background-color: #005ADC;
+  opacity: 1;
+  width: 50px;
+  height: 50px;
+}
+.leaflet-container {
+  height: 400px !important;
+  width: 100% !important;
 }
