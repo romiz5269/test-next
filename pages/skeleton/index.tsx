@@ -7,6 +7,8 @@ import FilterBoxSkeleton from '../../src/components/skeletons/filterbox/FilterBo
 import ListPropertySkeleton from '../../src/components/skeletons/list-property/listPropertySkeleton'
 import ProfileAreaSkeleton from '../../src/components/skeletons/profile-area/profileAreaSkeleton'
 import ProfileCardSkeleton from '../../src/components/skeletons/profile-card/profileCardSkeleton'
+
+import { numberToWords } from "@persian-tools/persian-tools";
 const SkeletonComp = () => {
 
     const [loading,setLoading]=useState(true)
@@ -51,7 +53,7 @@ const SkeletonComp = () => {
             </div>
 
             : <>
-             finally
+             dsfsdf
             </>
         }
  
