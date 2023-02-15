@@ -55,6 +55,7 @@ export default function Home() {
       <button onClick={handleNavigate}>go other page</button>
       <Link href={"/videoplayer"} as="/mojtaba" hrefLang='en'>video player</Link>
       <Link href={"/circle"}>circle</Link>
+      <Link href={"/skeleton"} className="mx-20">skeletons</Link>
       <div>
         <Link href={test === "test" ? '/gooz' : '/goh'}>
           link
